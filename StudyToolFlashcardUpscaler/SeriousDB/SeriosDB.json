@@ -1,4 +1,5 @@
-[
+{
+  "user": [
     {
       "id": 1,
       "username": "john_doe",
@@ -14,4 +15,100 @@
       "username": "admin",
       "password": "admin@2025"
     }
-]
+  ],
+  "notes": [
+    {
+      "code": "d1b28f5a-3f0c-4e30-9f4f-1c8d7a3f8e22",
+      "topic": "Cell Division",
+      "description": "Covers the process of mitosis and meiosis in eukaryotic cells.",
+      "keyPoints": [
+        "Mitosis results in two identical daughter cells.",
+        "Meiosis produces four genetically distinct gametes.",
+        "Both processes involve the duplication and separation of chromosomes.",
+        "Cytokinesis occurs at the end of both mitosis and meiosis."
+      ]
+    },
+    {
+      "code": "a913c75e-74a1-4b59-8898-77b7cf35b3e2",
+      "topic": "Photosynthesis",
+      "description": "The process by which plants convert sunlight into energy.",
+      "keyPoints": [
+        "Occurs mainly in the chloroplasts of leaf cells.",
+        "Uses sunlight, water, and carbon dioxide.",
+        "Produces glucose and releases oxygen.",
+        "Chlorophyll absorbs light energy to power the reaction."
+      ]
+    },
+    {
+      "code": "0e08f530-2f7b-4f27-8b84-6c7f2f5de9d4",
+      "topic": "Newton's Laws of Motion",
+      "description": "Fundamental laws describing the motion of objects.",
+      "keyPoints": [
+        "First law: An object remains at rest or in uniform motion unless acted upon.",
+        "Second law: Force equals mass times acceleration (F = ma).",
+        "Third law: For every action, there is an equal and opposite reaction."
+      ]
+    },
+    {
+      "code": "af4eeb08-25e5-4b3d-a5a6-93f39e1d3c1e",
+      "topic": "The Water Cycle",
+      "description": "Describes the continuous movement of water on, above, and below Earth's surface.",
+      "keyPoints": [
+        "Key stages: evaporation, condensation, precipitation, collection.",
+        "Sunlight drives evaporation from oceans, lakes, and rivers.",
+        "Clouds form through condensation in the atmosphere.",
+        "Water returns to the surface as rain, snow, or other forms of precipitation."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "option1": "Madrid",
+      "option2": "Berlin",
+      "option3": "Rome",
+      "option4": "Paris"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "answer": "Mars",
+      "option1": "Earth",
+      "option2": "Mars",
+      "option3": "Jupiter",
+      "option4": "Venus"
+    },
+    {
+      "question": "What is the chemical symbol for water?",
+      "answer": "H2O",
+      "option1": "HO2",
+      "option2": "H2O",
+      "option3": "OH",
+      "option4": "O2"
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "answer": "William Shakespeare",
+      "option1": "William Wordsworth",
+      "option2": "Jane Austen",
+      "option3": "William Shakespeare",
+      "option4": "Charles Dickens"
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "answer": "Pacific Ocean",
+      "option1": "Indian Ocean",
+      "option2": "Arctic Ocean",
+      "option3": "Atlantic Ocean",
+      "option4": "Pacific Ocean"
+    },
+    {
+      "question": "What is the square root of 64?",
+      "answer": "8",
+      "option1": "6",
+      "option2": "7",
+      "option3": "8",
+      "option4": "9"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ namespace StudyToolFlashcardUpscaler.Controllers
         public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
         {
             var added = _noteService.AddNote(newNote);
-            return CreatedAtAction(nameof(GetAllNotes), new { id = added.Code }, added);
+            return CreatedAtAction(nameof(GetAllNotes), new { id = added.code }, added);
         }
 
         [HttpPut("{noteCode}")]

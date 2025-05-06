@@ -20,18 +20,18 @@ namespace StudyToolFlashcardUpscaler.Services
 
         public bool EditNote(Guid noteCode, NoteDto updatedNote)
         {
-            var existing = Notes.FirstOrDefault(n => n.Code == noteCode);
+            var existing = Notes.FirstOrDefault(n => n.code == noteCode);
             if (existing == null) return false;
 
-            existing.Topic = updatedNote.Topic;
-            existing.Description = updatedNote.Description;
-            existing.Notes = updatedNote.Notes;
+            existing.topic = updatedNote.topic;
+            existing.description = updatedNote.description;
+            existing.keyPoints = updatedNote.keyPoints;
             return true;
         }
 
         public bool DeleteNote(Guid noteCode)
         {
-            var note = Notes.FirstOrDefault(n => n.Code == noteCode);
+            var note = Notes.FirstOrDefault(n => n.code == noteCode);
             if (note == null) return false;
 
             Notes.Remove(note);

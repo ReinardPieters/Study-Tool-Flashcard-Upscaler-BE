@@ -9,9 +9,9 @@ using System.Text.Json;
 public class LoginController : ControllerBase
 {
     [HttpGet]
-    public List<LoginDto> Login()
+    public List<User> Login()
     {
-        
+        // Todo : Fix what ever the fuck this is
         // if (request.Username == "admin" && request.Password == "password123"){
         //     return Ok(true);
         // }
@@ -23,19 +23,12 @@ public class LoginController : ControllerBase
         return LoadUsersFromJson();
     }
 
-     private List<LoginDto> LoadUsersFromJson()
+    private List<User> LoadUsersFromJson()
     {
         var filePath = Path.Combine("SeriousDB/SeriosDB.json");
-        try
-        {
-            var json = System.IO.File.ReadAllText(filePath);
-            var db = JsonSerializer.Deserialize<List<LoginDto>>(json);
-            return db;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Deserialization failed: {ex.Message}");
-            throw;
-        }
+
+        var json = System.IO.File.ReadAllText(filePath);
+        var db = JsonSerializer.Deserialize<Database>(json);
+        return db.user;
     }
 }

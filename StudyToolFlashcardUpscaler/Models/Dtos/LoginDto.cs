@@ -2,6 +2,7 @@ namespace StudyToolFlashcardUpscaler.Models.Dtos;
 
 public class LoginDto
 {
-    public required string Username { get; set; }
-    public required string Password { get; set; }
+    public required int id { get; set; }
+    public required string username { get; set; }
+    public required string password { get; set; }
 }

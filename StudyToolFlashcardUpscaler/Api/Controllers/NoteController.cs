@@ -7,7 +7,7 @@ namespace StudyToolFlashcardUpscaler.Controllers
     [Route("api/[controller]")]
     public class NoteController : ControllerBase
     {
-        private static readonly List<NoteDto> Notes = new();
+        private static readonly List<NoteDto> Notes = [];
 
         [HttpGet]
         public ActionResult<List<NoteDto>> GetAllNotes()

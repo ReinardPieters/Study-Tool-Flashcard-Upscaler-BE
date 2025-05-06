@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudyToolFlashcardUpscaler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e02fe246afb913854d973c85957625a05103b710")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+443a69c053f20abf30dc2a7654e3c39a4ee36a8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudyToolFlashcardUpscaler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudyToolFlashcardUpscaler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

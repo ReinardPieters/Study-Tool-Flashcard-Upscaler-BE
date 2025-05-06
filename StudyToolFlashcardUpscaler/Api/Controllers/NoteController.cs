@@ -9,9 +9,8 @@ namespace StudyToolFlashcardUpscaler.Controllers
     {
         private static readonly List<NoteDto> Notes = new();
 
-        // GET: api/note
         [HttpGet]
-        public ActionResult<List<NoteDto>> GetNotes()
+        public ActionResult<List<NoteDto>> GetAllNotes()
         {
             return Ok(Notes);
         }
@@ -20,7 +19,7 @@ namespace StudyToolFlashcardUpscaler.Controllers
         public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
         {
             Notes.Add(newNote);
-            return CreatedAtAction(nameof(GetNotes), new { id = newNote.Code }, newNote);
+            return CreatedAtAction(nameof(GetAllNotes), new { id = newNote.Code }, newNote);
         }
 
         [HttpPut("{noteCode}")]

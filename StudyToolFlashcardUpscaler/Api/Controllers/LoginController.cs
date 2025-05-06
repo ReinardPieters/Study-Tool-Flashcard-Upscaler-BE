@@ -9,7 +9,7 @@ using System.Text.Json;
 public class LoginController : ControllerBase
 {
     [HttpGet]
-    public ActionResult<bool> Login()
+    public List<LoginDto> Login()
     {
         
         // if (request.Username == "admin" && request.Password == "password123"){
@@ -20,11 +20,7 @@ public class LoginController : ControllerBase
         //     return Ok(false);
         // }
 
-        var users = LoadUsersFromJson();
-
-        Console.WriteLine(users);
-
-        return Ok();
+        return LoadUsersFromJson();
     }
 
      private List<LoginDto> LoadUsersFromJson()

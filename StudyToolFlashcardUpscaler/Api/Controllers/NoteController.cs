@@ -1,48 +1,40 @@
 using Microsoft.AspNetCore.Mvc;
 using StudyToolFlashcardUpscaler.Models.Dtos;
+using StudyToolFlashcardUpscaler.Services;
 
-namespace StudyToolFlashcardUpscaler.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class NoteController : ControllerBase
+namespace StudyToolFlashcardUpscaler.Controllers
 {
-    private static readonly List<NoteDto> Notes = [];
-
-    [HttpGet]
-    public ActionResult<List<NoteDto>> GetAllNotes()
+    [ApiController]
+    [Route("api/[controller]")]
+    public class NoteController(NoteService noteService) : ControllerBase
     {
-        return Ok(Notes);
-    }
+        private readonly NoteService _noteService = noteService;
 
-    [HttpPost]
-    public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
-    {
-        Notes.Add(newNote);
-        return CreatedAtAction(nameof(GetAllNotes), new { id = newNote.Code }, newNote);
-    }
+        [HttpGet]
+        public ActionResult<List<NoteDto>> GetAllNotes()
+        {
+            return Ok(_noteService.GetAllNotes());
+        }
 
-    [HttpPut("{noteCode}")]
-    public IActionResult EditNote(Guid noteCode, [FromBody] NoteDto updatedNote)
-    {
-        var existing = Notes.FirstOrDefault(n => n.Code == noteCode);
-        if (existing == null) return NotFound();
+        [HttpPost]
+        public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
+        {
+            var added = _noteService.AddNote(newNote);
+            return CreatedAtAction(nameof(GetAllNotes), new { id = added.Code }, added);
+        }
 
-        existing.Topic = updatedNote.Topic;
-        existing.Description = updatedNote.Description;
-        existing.Notes = updatedNote.Notes;
+        [HttpPut("{noteCode}")]
+        public IActionResult EditNote(Guid noteCode, [FromBody] NoteDto updatedNote)
+        {
+            var result = _noteService.EditNote(noteCode, updatedNote);
+            return result ? NoContent() : NotFound();
+        }
 
-        return NoContent();
-    }
-
-    [HttpDelete("{noteCode}")]
-    public IActionResult DeleteNote(Guid noteCode)
-    {
-        var note = Notes.FirstOrDefault(n => n.Code == noteCode);
-        if (note == null) return NotFound();
-
-        Notes.Remove(note);
-        return NoContent();
+        [HttpDelete("{noteCode}")]
+        public IActionResult DeleteNote(Guid noteCode)
+        {
+            var result = _noteService.DeleteNote(noteCode);
+            return result ? NoContent() : NotFound();
+        }
     }
 }
-

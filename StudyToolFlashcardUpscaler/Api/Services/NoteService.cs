@@ -36,7 +36,7 @@ namespace StudyToolFlashcardUpscaler.Services
 
         public NoteDto? AddNote(NoteDto newNote)
         {
-            newNote.code = rnd.Next(1,1000);
+            newNote.code = rnd.Next(1,int.MaxValue);
             if (_database.Data!.notes == null)
                 _database.Data.notes = [];
 

@@ -14,6 +14,11 @@
       "id": 3,
       "username": "admin",
       "password": "admin@2025"
+    },
+    {
+      "id": 1509915008,
+      "username": "test",
+      "password": "test"
     }
   ],
   "notes": [
@@ -41,7 +46,7 @@
     },
     {
       "code": 3,
-      "topic": "Newton's Laws of Motion",
+      "topic": "Newton\u0027s Laws of Motion",
       "description": "Fundamental laws describing the motion of objects.",
       "keyPoints": [
         "First law: An object remains at rest or in uniform motion unless acted upon.",
@@ -52,7 +57,7 @@
     {
       "code": 4,
       "topic": "The Water Cycle",
-      "description": "Describes the continuous movement of water on, above, and below Earth's surface.",
+      "description": "Describes the continuous movement of water on, above, and below Earth\u0027s surface.",
       "keyPoints": [
         "Key stages: evaporation, condensation, precipitation, collection.",
         "Sunlight drives evaporation from oceans, lakes, and rivers.",
@@ -63,58 +68,58 @@
   ],
   "cards": [
     {
-      "id": 1001,
-      "question": "What is the capital of France?",
-      "answer": "Paris",
-      "option1": "Madrid",
-      "option2": "Berlin",
-      "option3": "Rome",
-      "option4": "Paris"
+      "Id": 0,
+      "Question": null,
+      "Answer": null,
+      "Option1": null,
+      "Option2": null,
+      "Option3": null,
+      "Option4": null
     },
     {
-      "id": 1002,
-      "question": "Which planet is known as the Red Planet?",
-      "answer": "Mars",
-      "option1": "Earth",
-      "option2": "Mars",
-      "option3": "Jupiter",
-      "option4": "Venus"
+      "Id": 0,
+      "Question": null,
+      "Answer": null,
+      "Option1": null,
+      "Option2": null,
+      "Option3": null,
+      "Option4": null
     },
     {
-      "id": 1003,
-      "question": "What is the chemical symbol for water?",
-      "answer": "H2O",
-      "option1": "HO2",
-      "option2": "H2O",
-      "option3": "OH",
-      "option4": "O2"
+      "Id": 0,
+      "Question": null,
+      "Answer": null,
+      "Option1": null,
+      "Option2": null,
+      "Option3": null,
+      "Option4": null
     },
     {
-      "id": 1004,
-      "question": "Who wrote 'Romeo and Juliet'?",
-      "answer": "William Shakespeare",
-      "option1": "William Wordsworth",
-      "option2": "Jane Austen",
-      "option3": "William Shakespeare",
-      "option4": "Charles Dickens"
+      "Id": 0,
+      "Question": null,
+      "Answer": null,
+      "Option1": null,
+      "Option2": null,
+      "Option3": null,
+      "Option4": null
     },
     {
-      "id": 1005,
-      "question": "What is the largest ocean on Earth?",
-      "answer": "Pacific Ocean",
-      "option1": "Indian Ocean",
-      "option2": "Arctic Ocean",
-      "option3": "Atlantic Ocean",
-      "option4": "Pacific Ocean"
+      "Id": 0,
+      "Question": null,
+      "Answer": null,
+      "Option1": null,
+      "Option2": null,
+      "Option3": null,
+      "Option4": null
     },
     {
-      "id": 1006,
-      "question": "What is the square root of 64?",
-      "answer": "8",
-      "option1": "6",
-      "option2": "7",
-      "option3": "8",
-      "option4": "9"
+      "Id": 0,
+      "Question": null,
+      "Answer": null,
+      "Option1": null,
+      "Option2": null,
+      "Option3": null,
+      "Option4": null
     }
   ]
 }

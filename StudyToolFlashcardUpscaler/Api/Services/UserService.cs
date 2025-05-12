@@ -9,10 +9,11 @@ namespace StudyToolFlashcardUpscaler.Api.Services
     public class UserService
     {
         private readonly DatabaseService _databaseService;
+        readonly Random rnd = new Random();
 
-        public UserService(DatabaseService databaseService)
+        public UserService(DatabaseService database)
         {
-            _databaseService = databaseService;
+            _databaseService = database;
             _databaseService.LoadData();
         }
 
@@ -21,24 +22,22 @@ namespace StudyToolFlashcardUpscaler.Api.Services
             return _databaseService.GetUsers();
         }
 
-        public UserDto CreateUser(UserDto userDto)
+        public UserDto CreateUser(UserDto newUser)
         {
-            if (userDto == null)
+            if (newUser == null)
             {
-                throw new ArgumentNullException(nameof(userDto), "User data cannot be null.");
+                throw new ArgumentNullException(nameof(newUser), "User data cannot be null.");
             }
 
-            var random = new Random();
+            newUser.id = rnd.Next(1,int.MaxValue);;
 
-            var user = new UserDto
-            {
-                id = random.Next(1, int.MaxValue),
-                username = userDto.username,
-                password = userDto.password,
-            };
+             if (_databaseService.Data!.notes == null)
+                _databaseService.Data.notes = [];
 
-            _databaseService.AddUser(user);
-            return user;
+            _databaseService.Data.users!.Add(newUser);
+            _databaseService.SaveData();
+
+            return newUser;
         }
     }
 }

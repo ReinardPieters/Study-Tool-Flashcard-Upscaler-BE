@@ -42,22 +42,6 @@ namespace StudyToolFlashcardUpscaler.Api.Services
             }
         }
 
-        public void AddUser(UserDto user)
-        {
-            if (user == null)
-            {
-                throw new ArgumentNullException(nameof(user), "User cannot be null.");
-            }
-
-            if (Data == null || Data.users == null)
-            {
-                throw new InvalidOperationException("Database or users collection is not initialized.");
-            }
-            Data.users.Add(user);
-
-            SaveData();
-        }
-
         public IEnumerable<NoteDto> GetNotes() => Data?.notes ?? Enumerable.Empty<NoteDto>();
         public IEnumerable<FlashCardDto> GetCards() => Data?.cards ?? Enumerable.Empty<FlashCardDto>();
         public IEnumerable<UserDto> GetUsers() => Data?.users ?? Enumerable.Empty<UserDto>();

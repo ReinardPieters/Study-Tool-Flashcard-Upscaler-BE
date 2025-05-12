@@ -6,10 +6,11 @@ namespace StudyToolFlashcardUpscaler.Services
     public class NoteService
     {
         private readonly DatabaseService _database;
-
+        readonly Random rnd = new Random();
         public NoteService(DatabaseService database)
         {
             _database = database;
+            
         }
 
         public IEnumerable<NoteDto> GetAllNotes()
@@ -35,10 +36,8 @@ namespace StudyToolFlashcardUpscaler.Services
 
         public NoteDto? AddNote(NoteDto newNote)
         {
-            if (_database.Data == null)
-                return null;
-
-            if (_database.Data.notes == null)
+            newNote.code = rnd.Next(1,1000);
+            if (_database.Data!.notes == null)
                 _database.Data.notes = new List<NoteDto>();
 
             _database.Data.notes.Add(newNote);

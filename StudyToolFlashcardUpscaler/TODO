@@ -1,18 +1,19 @@
 Flashcard Controller :
     ☐ Get Flashcards
-    ☐ Get FlashCard
     ☐ Create flashcard
-    ☐ Update Flashcard 
-    ☐ Delete Flashcard
+    ☐ Update Flashcard (Students implement full feature)
+    ☐ Delete Flashcard 
 
 Notes controller :
     ☐ Get Notes
     ☐ Get Note
-    ☐ Create Note
+    ☐ Create Note (Students implement partialy implemented)
     ☐ Update Note
-    ☐ Delete Note
+    ☐ Delete Note (Students implement full feature)
 
 Login : 
+    ☐ Login (Students fix)
+    ☐ create user?
 
 DB :
   ☐ get data from database

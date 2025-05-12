@@ -10,6 +10,7 @@ namespace StudyToolFlashcardUpscaler.Services
         public NoteService(DatabaseService database)
         {
             _database = database;
+            _database.LoadData();
             
         }
 

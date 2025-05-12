@@ -18,7 +18,7 @@
   ],
   "notes": [
     {
-      "code": "d1b28f5a-3f0c-4e30-9f4f-1c8d7a3f8e22",
+      "code": "8541",
       "topic": "Cell Division",
       "description": "Covers the process of mitosis and meiosis in eukaryotic cells.",
       "keyPoints": [
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "code": "a913c75e-74a1-4b59-8898-77b7cf35b3e2",
+      "code": "7531",
       "topic": "Photosynthesis",
       "description": "The process by which plants convert sunlight into energy.",
       "keyPoints": [
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "code": "0e08f530-2f7b-4f27-8b84-6c7f2f5de9d4",
+      "code": "9823",
       "topic": "Newton's Laws of Motion",
       "description": "Fundamental laws describing the motion of objects.",
       "keyPoints": [
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "code": "af4eeb08-25e5-4b3d-a5a6-93f39e1d3c1e",
+      "code": "1597",
       "topic": "The Water Cycle",
       "description": "Describes the continuous movement of water on, above, and below Earth's surface.",
       "keyPoints": [
@@ -63,6 +63,7 @@
   ],
   "cards": [
     {
+      "id": 1001,
       "question": "What is the capital of France?",
       "answer": "Paris",
       "option1": "Madrid",
@@ -71,6 +72,7 @@
       "option4": "Paris"
     },
     {
+      "id": 1002,
       "question": "Which planet is known as the Red Planet?",
       "answer": "Mars",
       "option1": "Earth",
@@ -79,6 +81,7 @@
       "option4": "Venus"
     },
     {
+      "id": 1003,
       "question": "What is the chemical symbol for water?",
       "answer": "H2O",
       "option1": "HO2",
@@ -87,6 +90,7 @@
       "option4": "O2"
     },
     {
+      "id": 1004,
       "question": "Who wrote 'Romeo and Juliet'?",
       "answer": "William Shakespeare",
       "option1": "William Wordsworth",
@@ -95,6 +99,7 @@
       "option4": "Charles Dickens"
     },
     {
+      "id": 1005,
       "question": "What is the largest ocean on Earth?",
       "answer": "Pacific Ocean",
       "option1": "Indian Ocean",
@@ -103,6 +108,7 @@
       "option4": "Pacific Ocean"
     },
     {
+      "id": 1006,
       "question": "What is the square root of 64?",
       "answer": "8",
       "option1": "6",

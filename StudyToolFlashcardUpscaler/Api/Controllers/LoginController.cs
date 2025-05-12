@@ -1,34 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
 using StudyToolFlashcardUpscaler.Models.Dtos;
+using StudyToolFlashcardUpscaler.Api.Services;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
 
-[ApiController]
-[Route("api/[controller]")]
-public class LoginController : ControllerBase
+namespace StudyToolFlashcardUpscaler.Api.Controllers
 {
-    [HttpGet]
-    public List<User> Login()
+    [ApiController]
+    [Route("api/[controller]")]
+    public class LoginController : ControllerBase
     {
-        // Todo : Fix what ever the fuck this is
-        // if (request.Username == "admin" && request.Password == "password123"){
-        //     return Ok(true);
-        // }
-        // else
-        // {
-        //     return Ok(false);
-        // }
+        private readonly UserService _userService;
 
-        return LoadUsersFromJson();
-    }
+        public LoginController(UserService userService)
+        {
+            _userService = userService;
+        }
 
-    private List<User> LoadUsersFromJson()
-    {
-        var filePath = Path.Combine("SeriousDB/SeriosDB.json");
-
-        var json = System.IO.File.ReadAllText(filePath);
-        var db = JsonSerializer.Deserialize<Database>(json);
-        return db.user;
+        /// <summary>
+        /// Retrieves all users from the system.
+        /// </summary>
+        /// <returns>List of UserDto objects.</returns>
+        [HttpGet]
+        public ActionResult<List<UserDto>> GetAllUsers()
+        {
+            var users = _userService.GetAllUsers();
+            return Ok(users);
+        }
     }
 }

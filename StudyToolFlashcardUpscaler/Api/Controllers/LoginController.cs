@@ -36,7 +36,7 @@ namespace StudyToolFlashcardUpscaler.Api.Controllers
             }
 
             var createdUser = _userService.CreateUser(userDto);
-            return CreatedAtAction(nameof(GetAllUsers), new { id = createdUser.id }, createdUser);
+            return CreatedAtAction(nameof(GetAllUsers), new { id = createdUser.Id }, createdUser);
         }
 
     }

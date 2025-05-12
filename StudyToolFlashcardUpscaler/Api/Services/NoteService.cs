@@ -23,7 +23,7 @@ namespace StudyToolFlashcardUpscaler.Services
             if (_database.Data == null)
                 return null;
 
-            var note = _database.Data.notes!.FirstOrDefault(x => x.code == id);
+            var note = _database.Data.notes!.FirstOrDefault(x => x.Id == id);
             if (note != null)
             {
                 return note;
@@ -36,18 +36,20 @@ namespace StudyToolFlashcardUpscaler.Services
 
         public NoteDto? AddNote(NoteDto newNote)
         {
-            newNote.code = rnd.Next(1,int.MaxValue);
             if (_database.Data!.notes == null)
                 _database.Data.notes = [];
+                
+            var highestId = _database.Data.notes.Max(x => x.Id);
+            newNote.Id = highestId + 1;
 
             _database.Data.notes.Add(newNote);
             _database.SaveData();
             return newNote;
         }
 
-        public bool EditNote(int noteCode, NoteDto updatedNote)
+        public bool EditNote(int id, NoteDto updatedNote)
         {
-            var note = _database.Data?.notes?.FirstOrDefault(n => n.code == noteCode);
+            var note = _database.Data?.notes?.FirstOrDefault(n => n.Id == id);
             if (note == null)
                 return false;
 

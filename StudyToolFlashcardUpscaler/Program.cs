@@ -8,6 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<NoteService>();
+builder.Services.AddScoped<FlashCardService>();
 builder.Services.AddSingleton<DatabaseService>();
 builder.Services.AddTransient<UserService>();
 

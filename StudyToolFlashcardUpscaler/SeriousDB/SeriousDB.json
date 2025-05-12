@@ -1,29 +1,29 @@
 {
   "users": [
     {
-      "id": 1,
+      "Id": 1,
       "username": "john_doe",
       "password": "password123"
     },
     {
-      "id": 2,
+      "Id": 2,
       "username": "jane_smith",
       "password": "securepass456"
     },
     {
-      "id": 3,
+      "Id": 3,
       "username": "admin",
       "password": "admin@2025"
     },
     {
-      "id": 1509915008,
+      "Id": 1509915008,
       "username": "test",
       "password": "test"
     }
   ],
   "notes": [
     {
-      "code": 1,
+      "Id": 1,
       "topic": "Cell Division",
       "description": "Covers the process of mitosis and meiosis in eukaryotic cells.",
       "keyPoints": [
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "code": 2,
+      "Id": 2,
       "topic": "Photosynthesis",
       "description": "The process by which plants convert sunlight into energy.",
       "keyPoints": [
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "code": 3,
+      "Id": 3,
       "topic": "Newton\u0027s Laws of Motion",
       "description": "Fundamental laws describing the motion of objects.",
       "keyPoints": [
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "code": 4,
+      "Id": 4,
       "topic": "The Water Cycle",
       "description": "Describes the continuous movement of water on, above, and below Earth\u0027s surface.",
       "keyPoints": [
@@ -71,55 +71,57 @@
       "Id": 0,
       "Question": null,
       "Answer": null,
-      "Option1": null,
-      "Option2": null,
-      "Option3": null,
-      "Option4": null
+      "Options": null
     },
     {
       "Id": 0,
       "Question": null,
       "Answer": null,
-      "Option1": null,
-      "Option2": null,
-      "Option3": null,
-      "Option4": null
+      "Options": null
     },
     {
       "Id": 0,
       "Question": null,
       "Answer": null,
-      "Option1": null,
-      "Option2": null,
-      "Option3": null,
-      "Option4": null
+      "Options": null
     },
     {
       "Id": 0,
       "Question": null,
       "Answer": null,
-      "Option1": null,
-      "Option2": null,
-      "Option3": null,
-      "Option4": null
+      "Options": null
     },
     {
       "Id": 0,
       "Question": null,
       "Answer": null,
-      "Option1": null,
-      "Option2": null,
-      "Option3": null,
-      "Option4": null
+      "Options": null
     },
     {
       "Id": 0,
       "Question": null,
       "Answer": null,
-      "Option1": null,
-      "Option2": null,
-      "Option3": null,
-      "Option4": null
+      "Options": null
+    },
+    {
+      "Id": 1,
+      "Question": "string",
+      "Answer": "string",
+      "Options": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      }
+    },
+    {
+      "Id": 3,
+      "Question": "string",
+      "Answer": "string",
+      "Options": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      }
     }
   ]
 }

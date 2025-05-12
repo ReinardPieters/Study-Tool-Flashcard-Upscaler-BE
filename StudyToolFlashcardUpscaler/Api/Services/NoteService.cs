@@ -17,6 +17,22 @@ namespace StudyToolFlashcardUpscaler.Services
             return _database.GetNotes();
         }
 
+        public NoteDto? GetNote(int id)
+        {
+            if (_database.Data == null)
+                return null;
+
+            var note = _database.Data.notes!.FirstOrDefault(x => x.code == id);
+            if (note != null)
+            {
+                return note;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public NoteDto? AddNote(NoteDto newNote)
         {
             if (_database.Data == null)

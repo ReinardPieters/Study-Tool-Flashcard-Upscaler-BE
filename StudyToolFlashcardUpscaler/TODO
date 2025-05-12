@@ -5,11 +5,11 @@ Flashcard Controller :
     ☐ Delete Flashcard 
 
 Notes controller :
-    ☐ Get Notes
-    ☐ Get Note
-    ☐ Create Note (Students implement partialy implemented)
-    ☐ Update Note
-    ☐ Delete Note (Students implement full feature)
+    ☐ Get Notes//done
+    ☐ Get Note//done
+    ☐ Create Note//done
+    ☐ Update Note//done
+    ☐ Delete Note
 
 Login : 
     ☐ Login (Students fix)

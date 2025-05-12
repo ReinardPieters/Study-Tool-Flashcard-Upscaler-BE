@@ -16,11 +16,17 @@ namespace StudyToolFlashcardUpscaler.Controllers
             return Ok(_noteService.GetAllNotes());
         }
 
+        [HttpGet("by-id")]
+        public ActionResult<NoteDto> GetNote(int id)
+        {
+            return Ok(_noteService.GetNote(id));
+        }
+
         [HttpPost]
         public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
         {
             var added = _noteService.AddNote(newNote);
-            return CreatedAtAction(nameof(GetAllNotes), new { id = added.code }, added);
+            return CreatedAtAction(nameof(GetAllNotes), new { id = added!.code }, added);
         }
 
         [HttpPut("{noteCode}")]

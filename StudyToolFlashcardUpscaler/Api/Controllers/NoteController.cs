@@ -10,18 +10,27 @@ namespace StudyToolFlashcardUpscaler.Controllers
     {
         private readonly NoteService _noteService = noteService;
 
+        /// <summary>
+        /// Returns a list of all notes
+        /// </summary>
         [HttpGet]
         public ActionResult<List<NoteDto>> GetAllNotes()
         {
             return Ok(_noteService.GetAllNotes());
         }
 
+        /// <summary>
+        /// Returns a list of all notes
+        /// </summary>
         [HttpGet("by-id")]
         public ActionResult<NoteDto> GetNote(int id)
         {
             return Ok(_noteService.GetNote(id));
         }
 
+         /// <summary>
+        /// Returns a list of all notes
+        /// </summary>
         [HttpPost]
         public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
         {
@@ -29,6 +38,9 @@ namespace StudyToolFlashcardUpscaler.Controllers
             return CreatedAtAction(nameof(GetAllNotes), new { id = added!.code }, added);
         }
 
+        /// <summary>
+        /// Returns a list of all notes
+        /// </summary>
         [HttpPut("{noteCode}")]
         public ActionResult EditNote(int noteCode, [FromBody] NoteDto updatedNote)
         {

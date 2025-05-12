@@ -20,5 +20,25 @@ namespace StudyToolFlashcardUpscaler.Api.Services
         {
             return _databaseService.GetUsers();
         }
+
+        public UserDto CreateUser(UserDto userDto)
+        {
+            if (userDto == null)
+            {
+                throw new ArgumentNullException(nameof(userDto), "User data cannot be null.");
+            }
+
+            var random = new Random();
+
+            var user = new UserDto
+            {
+                id = random.Next(1, int.MaxValue),
+                username = userDto.username,
+                password = userDto.password,
+            };
+
+            _databaseService.AddUser(user);
+            return user;
+        }
     }
 }

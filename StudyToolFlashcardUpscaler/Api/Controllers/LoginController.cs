@@ -26,5 +26,18 @@ namespace StudyToolFlashcardUpscaler.Api.Controllers
             var users = _userService.GetAllUsers();
             return Ok(users);
         }
+
+        [HttpPost("create-user")]
+        public ActionResult<UserDto> CreateUser([FromBody] UserDto userDto)
+        {
+            if (userDto == null)
+            {
+                return BadRequest("User data is required.");
+            }
+
+            var createdUser = _userService.CreateUser(userDto);
+            return CreatedAtAction(nameof(GetAllUsers), new { id = createdUser.id }, createdUser);
+        }
+
     }
 }

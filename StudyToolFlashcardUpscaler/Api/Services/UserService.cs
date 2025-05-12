@@ -16,9 +16,9 @@ namespace StudyToolFlashcardUpscaler.Api.Services
             _databaseService.LoadData();
         }
 
-        public List<UserDto> GetAllUsers()
+        public IEnumerable<UserDto> GetAllUsers()
         {
-            return _databaseService.GetUsers().ToList();
+            return _databaseService.GetUsers();
         }
     }
 }

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.Json;
 using StudyToolFlashcardUpscaler.Models.Dtos;
 
@@ -32,7 +28,19 @@ namespace StudyToolFlashcardUpscaler.Api.Services
             }
         }
 
-        // Convenience accessors
+        public void SaveData()
+        {
+            try
+            {
+                string json = JsonSerializer.Serialize(Data, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(DatabaseFilePath, json);
+                Console.WriteLine("💾 Database saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Error saving data: {ex.Message}");
+            }
+        }
         public IEnumerable<NoteDto> GetNotes() => Data?.notes ?? Enumerable.Empty<NoteDto>();
         public IEnumerable<FlashCardDto> GetCards() => Data?.cards ?? Enumerable.Empty<FlashCardDto>();
         public IEnumerable<UserDto> GetUsers() => Data?.users ?? Enumerable.Empty<UserDto>();

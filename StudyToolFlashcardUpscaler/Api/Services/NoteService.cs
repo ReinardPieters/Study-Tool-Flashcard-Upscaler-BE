@@ -11,7 +11,6 @@ namespace StudyToolFlashcardUpscaler.Services
         {
             _database = database;
             _database.LoadData();
-            
         }
 
         public IEnumerable<NoteDto> GetAllNotes()

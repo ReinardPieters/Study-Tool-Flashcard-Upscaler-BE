@@ -5,7 +5,7 @@ namespace StudyToolFlashcardUpscaler.Api.Services
 {
     public class DatabaseService
     {
-        private static readonly string DatabaseFilePath = Path.Combine(AppContext.BaseDirectory, "SeriousDB/SeriousDB.json");
+        private static readonly string DatabaseFilePath = Path.Combine("SeriousDB/SeriousDB.json");
         public Database? Data { get; private set; }
 
         public void LoadData()
@@ -57,7 +57,7 @@ namespace StudyToolFlashcardUpscaler.Api.Services
 
             SaveData();
         }
-        
+
         public IEnumerable<NoteDto> GetNotes() => Data?.notes ?? Enumerable.Empty<NoteDto>();
         public IEnumerable<FlashCardDto> GetCards() => Data?.cards ?? Enumerable.Empty<FlashCardDto>();
         public IEnumerable<UserDto> GetUsers() => Data?.users ?? Enumerable.Empty<UserDto>();

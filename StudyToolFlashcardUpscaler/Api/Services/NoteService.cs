@@ -18,24 +18,24 @@ namespace StudyToolFlashcardUpscaler.Services
             return newNote;
         }
 
-        public bool EditNote(Guid noteCode, NoteDto updatedNote)
-        {
-            var existing = Notes.FirstOrDefault(n => n.code == noteCode);
-            if (existing == null) return false;
+        // public bool EditNote(string noteCode, NoteDto updatedNote)
+        // {
+        //     var existing = Notes.FirstOrDefault(n => n.code == noteCode);
+        //     if (existing == null) return false;
 
-            existing.topic = updatedNote.topic;
-            existing.description = updatedNote.description;
-            existing.keyPoints = updatedNote.keyPoints;
-            return true;
-        }
+        //     existing.topic = updatedNote.topic;
+        //     existing.description = updatedNote.description;
+        //     existing.keyPoints = updatedNote.keyPoints;
+        //     return true;
+        // }
 
-        public bool DeleteNote(Guid noteCode)
-        {
-            var note = Notes.FirstOrDefault(n => n.code == noteCode);
-            if (note == null) return false;
+        // public bool DeleteNote(string noteCode)
+        // {
+        //     var note = Notes.FirstOrDefault(n => n.code == noteCode);
+        //     if (note == null) return false;
 
-            Notes.Remove(note);
-            return true;
-        }
+        //     Notes.Remove(note);
+        //     return true;
+        // }
     }
 }

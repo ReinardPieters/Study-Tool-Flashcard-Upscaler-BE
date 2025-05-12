@@ -23,18 +23,18 @@ namespace StudyToolFlashcardUpscaler.Controllers
             return CreatedAtAction(nameof(GetAllNotes), new { id = added.code }, added);
         }
 
-        [HttpPut("{noteCode}")]
-        public IActionResult EditNote(Guid noteCode, [FromBody] NoteDto updatedNote)
-        {
-            var result = _noteService.EditNote(noteCode, updatedNote);
-            return result ? NoContent() : NotFound();
-        }
+        // [HttpPut("{noteCode}")]
+        // public IActionResult EditNote(string noteCode, [FromBody] NoteDto updatedNote)
+        // {
+        //     var result = _noteService.EditNote(noteCode, updatedNote);
+        //     return result ? NoContent() : NotFound();
+        // }
 
-        [HttpDelete("{noteCode}")]
-        public IActionResult DeleteNote(Guid noteCode)
-        {
-            var result = _noteService.DeleteNote(noteCode);
-            return result ? NoContent() : NotFound();
-        }
+        // [HttpDelete("{noteCode}")]
+        // public IActionResult DeleteNote(string noteCode)
+        // {
+        //     var result = _noteService.DeleteNote(noteCode);
+        //     return result ? NoContent() : NotFound();
+        // }
     }
 }

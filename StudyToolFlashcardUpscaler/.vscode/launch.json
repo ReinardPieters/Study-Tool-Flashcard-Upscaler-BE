@@ -1,37 +1,22 @@
 {
-"version": "0.2.0",
-"configurations": [
-  {
-    "name": "Launch API with Swagger in Chrome",
-    "type": "coreclr",
-    "request": "launch",
-    "program": "${workspaceFolder}/bin/Debug/net8.0/StudyToolFlashcardUpscaler.dll",
-    "args": [],
-    "cwd": "${workspaceFolder}",
-    "stopAtEntry": false,
-    "serverReadyAction": {
-      "action": "openExternally",
-      "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-    },
-    "launchBrowser": {
-      "enabled": true,
-      "args": "${auto-detect-url}",
-      "windows": {
-        "command": "cmd.exe",
-        "args": "/C start chrome --new-window --app=${auto-detect-url}"
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/net8.0/StudyToolFlashcardUpscaler.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
       },
-      "osx": {
-        "command": "open",
-        "args": "-a Google Chrome ${auto-detect-url}"
-      },
-      "linux": {
-        "command": "google-chrome",
-        "args": "--new-window --app=${auto-detect-url}"
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    },
-    "env": {
-      "ASPNETCORE_ENVIRONMENT": "Development"
     }
-  }
-]
+  ]
 }

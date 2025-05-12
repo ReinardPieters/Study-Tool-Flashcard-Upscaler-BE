@@ -18,7 +18,7 @@
   ],
   "notes": [
     {
-      "code": "8541",
+      "code": 1,
       "topic": "Cell Division",
       "description": "Covers the process of mitosis and meiosis in eukaryotic cells.",
       "keyPoints": [
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "code": "7531",
+      "code": 2,
       "topic": "Photosynthesis",
       "description": "The process by which plants convert sunlight into energy.",
       "keyPoints": [
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "code": "9823",
+      "code": 3,
       "topic": "Newton's Laws of Motion",
       "description": "Fundamental laws describing the motion of objects.",
       "keyPoints": [
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "code": "1597",
+      "code": 4,
       "topic": "The Water Cycle",
       "description": "Describes the continuous movement of water on, above, and below Earth's surface.",
       "keyPoints": [

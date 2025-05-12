@@ -1,41 +1,57 @@
-// Services/NoteService.cs
+using StudyToolFlashcardUpscaler.Api.Services;
 using StudyToolFlashcardUpscaler.Models.Dtos;
 
 namespace StudyToolFlashcardUpscaler.Services
 {
     public class NoteService
     {
-        private static readonly List<NoteDto> Notes = [];
+        private readonly DatabaseService _database;
 
-        public List<NoteDto> GetAllNotes()
+        public NoteService(DatabaseService database)
         {
-            return Notes;
+            _database = database;
         }
 
-        public NoteDto AddNote(NoteDto newNote)
+        public IEnumerable<NoteDto> GetAllNotes()
         {
-            Notes.Add(newNote);
+            return _database.GetNotes();
+        }
+
+        public NoteDto? AddNote(NoteDto newNote)
+        {
+            if (_database.Data == null)
+                return null;
+
+            if (_database.Data.notes == null)
+                _database.Data.notes = new List<NoteDto>();
+
+            _database.Data.notes.Add(newNote);
+            _database.SaveData();
             return newNote;
         }
 
-        // public bool EditNote(string noteCode, NoteDto updatedNote)
-        // {
-        //     var existing = Notes.FirstOrDefault(n => n.code == noteCode);
-        //     if (existing == null) return false;
+        public bool EditNote(int noteCode, NoteDto updatedNote)
+        {
+            var note = _database.Data?.notes?.FirstOrDefault(n => n.code == noteCode);
+            if (note == null)
+                return false;
 
-        //     existing.topic = updatedNote.topic;
-        //     existing.description = updatedNote.description;
-        //     existing.keyPoints = updatedNote.keyPoints;
-        //     return true;
-        // }
+            note.topic = updatedNote.topic;
+            note.description = updatedNote.description;
+            note.keyPoints = updatedNote.keyPoints;
+            _database.SaveData();
+            return true;
+        }
 
-        // public bool DeleteNote(string noteCode)
-        // {
-        //     var note = Notes.FirstOrDefault(n => n.code == noteCode);
-        //     if (note == null) return false;
+        public bool DeleteNote(int noteCode)
+        {
+            var note = _database.Data?.notes?.FirstOrDefault(n => n.code == noteCode);
+            if (note == null)
+                return false;
 
-        //     Notes.Remove(note);
-        //     return true;
-        // }
+            _database.Data.notes.Remove(note);
+            _database.SaveData();
+            return true;
+        }
     }
 }

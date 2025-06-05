@@ -1,25 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using StudyToolFlashcardUpscaler.Models.Dtos;
 
 namespace StudyToolFlashcardUpscaler.Api.Services
 {
     public class UserService
     {
-        private readonly DatabaseService _databaseService;
+        private readonly DatabaseService _database;
         readonly Random rnd = new Random();
 
         public UserService(DatabaseService database)
         {
-            _databaseService = database;
-            _databaseService.LoadData();
+            _database = database;
+            _database.LoadData();
         }
 
         public IEnumerable<UserDto> GetAllUsers()
         {
-            return _databaseService.GetUsers();
+            return _database.GetUsers();
         }
 
         public UserDto CreateUser(UserDto newUser)
@@ -29,13 +25,14 @@ namespace StudyToolFlashcardUpscaler.Api.Services
                 throw new ArgumentNullException(nameof(newUser), "User data cannot be null.");
             }
 
-            newUser.id = rnd.Next(1,int.MaxValue);;
+             if (_database.Data!.users == null)
+                _database.Data.users = [];
 
-             if (_databaseService.Data!.notes == null)
-                _databaseService.Data.notes = [];
+            var highestId = _database.Data.users.Max(x => x.Id);
+                newUser.Id = highestId + 1;
 
-            _databaseService.Data.users!.Add(newUser);
-            _databaseService.SaveData();
+            _database.Data.users!.Add(newUser);
+            _database.SaveData();
 
             return newUser;
         }

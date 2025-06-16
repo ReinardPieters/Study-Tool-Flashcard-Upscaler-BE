@@ -41,14 +41,14 @@ namespace StudyToolFlashcardUpscaler.Controllers
         /// <summary>
         /// Returns the updated note
         /// </summary>
-        [HttpPut("{noteCode}")]
-        public ActionResult EditNote(int noteCode, [FromBody] NoteDto updatedNote)
+        [HttpPut("{id}")]
+        public ActionResult EditNote(int id, [FromBody] NoteDto updatedNote)
         {
-            bool result = _noteService.EditNote(noteCode, updatedNote);
+            bool result = _noteService.EditNote(id, updatedNote);
             return result ? NoContent() : NotFound(result);
         }
 
-        [HttpDelete("{noteCode}")]
+        [HttpDelete("{id}")]
         public string DeleteNote(int id)
         {
             var result = _noteService.DeleteNote(id);

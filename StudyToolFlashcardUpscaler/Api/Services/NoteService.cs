@@ -38,14 +38,18 @@ namespace StudyToolFlashcardUpscaler.Services
             if (_database.Data!.notes == null)
                 _database.Data.notes = new List<NoteDto>();
 
-                var highestId = 0;
-                if (_database.Data.notes.Count > 0)
-                    highestId = _database.Data.notes.Max(x => x.Id);
+            int newId = 0;
 
-                newNote.Id = highestId + 1;
+            if (_database.Data.notes.Count > 0)
+            {
+                var existingIds = _database.Data.notes.Select(n => n.Id);
+                newId = existingIds.Max() + 1;
+            }
 
+            newNote.Id = newId;
             _database.Data.notes.Add(newNote);
             _database.SaveData();
+
             return newNote;
         }
 
@@ -70,7 +74,7 @@ namespace StudyToolFlashcardUpscaler.Services
 
             _database.Data.notes.Remove(note);
             _database.SaveData();
-            return  "✅ Note deleted successfully :)";
+            return "✅ Note deleted successfully :)";
         }
     }
 }

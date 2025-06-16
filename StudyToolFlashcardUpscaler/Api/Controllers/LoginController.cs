@@ -23,8 +23,16 @@ namespace StudyToolFlashcardUpscaler.Api.Controllers
         [HttpGet]
         public ActionResult<List<UserDto>> GetAllUsers()
         {
-            var users = _userService.GetAllUsers();
-            return Ok(users);
+            try
+            {
+
+                var users = _userService.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpPost("create-user")]

@@ -23,49 +23,25 @@
   ],
   "notes": [
     {
-      "Id": 1,
-      "topic": "Cell Division",
-      "description": "Covers the process of mitosis and meiosis in eukaryotic cells.",
-      "keyPoints": [
-        "Mitosis results in two identical daughter cells.",
-        "Meiosis produces four genetically distinct gametes.",
-        "Both processes involve the duplication and separation of chromosomes.",
-        "Cytokinesis occurs at the end of both mitosis and meiosis."
-      ]
-    },
-    {
-      "Id": 2,
-      "topic": "Photosynthesis",
-      "description": "The process by which plants convert sunlight into energy.",
-      "keyPoints": [
-        "Occurs mainly in the chloroplasts of leaf cells.",
-        "Uses sunlight, water, and carbon dioxide.",
-        "Produces glucose and releases oxygen.",
-        "Chlorophyll absorbs light energy to power the reaction."
-      ]
-    },
-    {
-      "Id": 3,
-      "topic": "Newton\u0027s Laws of Motion",
-      "description": "Fundamental laws describing the motion of objects.",
-      "keyPoints": [
-        "First law: An object remains at rest or in uniform motion unless acted upon.",
-        "Second law: Force equals mass times acceleration (F = ma).",
-        "Third law: For every action, there is an equal and opposite reaction."
-      ]
-    },
-    {
-      "Id": 4,
-      "topic": "The Water Cycle",
-      "description": "Describes the continuous movement of water on, above, and below Earth\u0027s surface.",
-      "keyPoints": [
-        "Key stages: evaporation, condensation, precipitation, collection.",
-        "Sunlight drives evaporation from oceans, lakes, and rivers.",
-        "Clouds form through condensation in the atmosphere.",
-        "Water returns to the surface as rain, snow, or other forms of precipitation."
+      "Id": null,
+      "topic": "Gaming",
+      "description": "dasd",
+      "points": [
+        "asddds"
       ]
     }
   ],
   "cards": [
+    {
+      "Id": 0,
+      "Question": "test",
+      "Answer": "yes",
+      "Options": [
+        "fsfd",
+        "sfsd",
+        "dsfsd",
+        "sfddsdddd"
+      ]
+    }
   ]
 }

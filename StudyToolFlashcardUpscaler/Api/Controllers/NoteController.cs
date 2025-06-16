@@ -48,11 +48,11 @@ namespace StudyToolFlashcardUpscaler.Controllers
             return result ? NoContent() : NotFound(result);
         }
 
-        // [HttpDelete("{noteCode}")]
-        // public IActionResult DeleteNote(int noteCode)
-        // {
-        //     var result = _noteService.DeleteNote(noteCode);
-        //     return result ? NoContent() : NotFound("Note was not found");
-        // }
+        [HttpDelete("{noteCode}")]
+        public string DeleteNote(int id)
+        {
+            var result = _noteService.DeleteNote(id);
+            return result;
+        }
     }
 }

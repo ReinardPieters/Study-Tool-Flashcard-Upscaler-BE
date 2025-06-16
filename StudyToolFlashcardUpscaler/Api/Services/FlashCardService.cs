@@ -45,6 +45,7 @@ namespace StudyToolFlashcardUpscaler.Services
 
             if (_database.Data.cards == null)
                 _database.Data.cards = new List<FlashCardDto>();
+                
                 var highestId = 0;
                 if (_database.Data.cards.Count > 0)
                     highestId = _database.Data.cards.Max(x => x.Id);

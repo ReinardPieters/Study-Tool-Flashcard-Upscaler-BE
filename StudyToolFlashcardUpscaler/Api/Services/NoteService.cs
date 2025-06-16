@@ -6,7 +6,6 @@ namespace StudyToolFlashcardUpscaler.Services
     public class NoteService
     {
         private readonly DatabaseService _database;
-        readonly Random rnd = new Random();
         public NoteService(DatabaseService database)
         {
             _database = database;
@@ -37,10 +36,13 @@ namespace StudyToolFlashcardUpscaler.Services
         public NoteDto? AddNote(NoteDto newNote)
         {
             if (_database.Data!.notes == null)
-                _database.Data.notes = [];
-                
-            var highestId = _database.Data.notes.Max(x => x.Id);
-            newNote.Id = highestId + 1;
+                _database.Data.notes = new List<NoteDto>();
+
+                var highestId = 0;
+                if (_database.Data.notes.Count > 0)
+                    highestId = _database.Data.notes.Max(x => x.Id);
+
+                newNote.Id = highestId + 1;
 
             _database.Data.notes.Add(newNote);
             _database.SaveData();
@@ -55,21 +57,20 @@ namespace StudyToolFlashcardUpscaler.Services
 
             note.topic = updatedNote.topic;
             note.description = updatedNote.description;
-            note.keyPoints = updatedNote.keyPoints;
+            note.points = updatedNote.points;
             _database.SaveData();
             return true;
         }
 
-        //TODO: add delete later
-        // public string DeleteNote(int noteCode)
-        // {
-        //     var note = _database.Data?.notes?.FirstOrDefault(n => n.code == noteCode);
-        //     if (note == null)
-        //         return false;
+        public string DeleteNote(int id)
+        {
+            var note = _database.Data?.notes?.FirstOrDefault(n => n.Id == id);
+            if (note == null)
+                return "Could not find note.";
 
-        //     _database.Data.notes.Remove(note);
-        //     _database.SaveData();
-        //     return "✅ Note deleted successfully :)";
-        // }
+            _database.Data.notes.Remove(note);
+            _database.SaveData();
+            return  "✅ Note deleted successfully :)";
+        }
     }
 }

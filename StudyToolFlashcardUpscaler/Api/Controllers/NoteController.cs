@@ -20,7 +20,7 @@ namespace StudyToolFlashcardUpscaler.Controllers
         }
 
         /// <summary>
-        /// Returns a list of all notes
+        /// Returns a sigle note by its ID
         /// </summary>
         [HttpGet("by-id")]
         public ActionResult<NoteDto> GetNote(int id)
@@ -29,7 +29,7 @@ namespace StudyToolFlashcardUpscaler.Controllers
         }
 
          /// <summary>
-        /// Returns a list of all notes
+        /// Returns the newly added note
         /// </summary>
         [HttpPost]
         public ActionResult<NoteDto> AddNote([FromBody] NoteDto newNote)
@@ -39,7 +39,7 @@ namespace StudyToolFlashcardUpscaler.Controllers
         }
 
         /// <summary>
-        /// Returns a list of all notes
+        /// Returns the updated note
         /// </summary>
         [HttpPut("{noteCode}")]
         public ActionResult EditNote(int noteCode, [FromBody] NoteDto updatedNote)

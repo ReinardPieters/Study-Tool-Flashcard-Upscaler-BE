@@ -21,30 +21,6 @@
       "password": "test"
     }
   ],
-  "notes": [
-    {
-      "Id": 2,
-      "topic": "sdfsddf",
-      "description": "sdfsdf",
-      "points": [
-        "sdfdsdd",
-        "dfsdf",
-        "sdddfdsdddd",
-        "sddfds"
-      ]
-    }
-  ],
-  "cards": [
-    {
-      "Id": 0,
-      "Question": "test",
-      "Answer": "yes",
-      "Options": [
-        "fsfd",
-        "sfsd",
-        "dsfsd",
-        "sfddsdddd"
-      ]
-    }
-  ]
+  "notes": [],
+  "cards": []
 }

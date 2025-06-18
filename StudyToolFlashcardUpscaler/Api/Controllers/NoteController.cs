@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using StudyToolFlashcardUpscaler.Models.Dtos;
 using StudyToolFlashcardUpscaler.Services;
@@ -49,10 +50,17 @@ namespace StudyToolFlashcardUpscaler.Controllers
         }
 
         [HttpDelete("{id}")]
-        public string DeleteNote(int id)
+        public IActionResult DeleteNote(int id)
         {
             var result = _noteService.DeleteNote(id);
-            return result;
+            if (result)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

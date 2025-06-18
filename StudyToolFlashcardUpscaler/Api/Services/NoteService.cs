@@ -66,15 +66,18 @@ namespace StudyToolFlashcardUpscaler.Services
             return true;
         }
 
-        public string DeleteNote(int id)
+        public bool DeleteNote(int id)
         {
-            var note = _database.Data?.notes?.FirstOrDefault(n => n.Id == id);
-            if (note == null)
-                return "Could not find note.";
+            if (_database.Data == null || _database.Data.notes == null)
+                return false;
 
-            _database.Data.notes.Remove(note);
+            var note = _database.Data.notes.FirstOrDefault(n => n.Id == id);
+            if (note == null)
+                return false;
+
+            bool deleted = _database.Data.notes.Remove(note);
             _database.SaveData();
-            return "✅ Note deleted successfully :)";
+            return deleted;
         }
     }
 }

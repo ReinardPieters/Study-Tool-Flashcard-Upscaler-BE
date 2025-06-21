@@ -36,5 +36,10 @@ namespace StudyToolFlashcardUpscaler.Api.Services
 
             return newUser;
         }
+        public UserDto AuthenticateUser(string username, string password)
+        {
+            var allUsersResults = GetAllUsers();// or _users, whichever is consistent
+            return allUsersResults.FirstOrDefault(u => u.username == username && u.password == password);
+        }
     }
 }

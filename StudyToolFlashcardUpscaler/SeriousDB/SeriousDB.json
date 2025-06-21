@@ -21,6 +21,17 @@
       "password": "test"
     }
   ],
-  "notes": [],
+  "notes": [
+    {
+      "Id": 0,
+      "topic": "awdawdawd",
+      "description": "adawdaw",
+      "points": [
+        "awdawdad",
+        "awdaw",
+        "dwawd"
+      ]
+    }
+  ],
   "cards": []
 }

@@ -58,6 +58,20 @@ namespace StudyToolFlashcardUpscaler.Services
             return newFlashCard;
         }
 
+        public bool EditFlashCard(int id, FlashCardDto updatedFlashCard)
+        {
+            var card = _database.Data?.cards?.FirstOrDefault(n => n.Id == id);
+            if (card == null)
+            {
+                return false;
+            }
+            card.Question = updatedFlashCard.Question;
+            card.Answer = updatedFlashCard.Answer;
+            card.Options = updatedFlashCard.Options;
+            _database.SaveData();
+            return true;
+        }
+
         public bool DeleteCard(int id)
         {
             var card = _database.Data?.cards?.FirstOrDefault(n => n.Id == id);

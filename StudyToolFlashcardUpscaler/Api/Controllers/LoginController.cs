@@ -34,6 +34,16 @@ namespace StudyToolFlashcardUpscaler.Api.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpPost("login")]
+        public ActionResult<UserDto> Login([FromBody] LoginDto loginDto)
+        {
+            var user = AuthenticateUser(loginDto.username, loginDto.password);
+
+            if (user == null)
+                return Unauthorized("Invalid credentials");
+
+            return Ok(user);
+        }
 
         [HttpPost("create-user")]
         public ActionResult<UserDto> CreateUser([FromBody] UserDto userDto)
@@ -45,6 +55,12 @@ namespace StudyToolFlashcardUpscaler.Api.Controllers
 
             var createdUser = _userService.CreateUser(userDto);
             return CreatedAtAction(nameof(GetAllUsers), new { id = createdUser.Id }, createdUser);
+        }
+        public UserDto AuthenticateUser(string username, string password)
+        {
+            var allUsersResults = _userService.GetAllUsers();
+            var allUsers = allUsersResults;// or _users, whichever is consistent
+            return allUsers.FirstOrDefault(u => u.username == username && u.password == password);
         }
 
     }

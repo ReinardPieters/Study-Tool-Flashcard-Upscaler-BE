@@ -57,5 +57,5 @@ namespace StudyToolFlashcardUpscaler.Api.Controllers
             return CreatedAtAction(nameof(GetAllUsers), new { id = createdUser.Id }, createdUser);
         }
 
-    }
+    }   
 }

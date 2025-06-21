@@ -16,22 +16,11 @@
       "password": "admin@2025"
     },
     {
-      "Id": 1509915008,
-      "username": "test",
-      "password": "test"
+      "Id": 4,
+      "username": "test2",
+      "password": "test2"
     }
   ],
-  "notes": [
-    {
-      "Id": 0,
-      "topic": "awdawdawd",
-      "description": "adawdaw",
-      "points": [
-        "awdawdad",
-        "awdaw",
-        "dwawd"
-      ]
-    }
-  ],
+  "notes": [],
   "cards": []
 }

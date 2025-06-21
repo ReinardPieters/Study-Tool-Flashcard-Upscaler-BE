@@ -19,6 +19,16 @@
       "Id": 4,
       "username": "test2",
       "password": "test2"
+    },
+    {
+      "Id": 5,
+      "username": "Tesr",
+      "password": "$2a$11$lYCrWDVDEF6EqzaZ9A1BE.NdwYFdPt0vQKlbxxDA9H463y84/zx4u"
+    },
+    {
+      "Id": 6,
+      "username": "test22",
+      "password": "$2a$11$ae2XZ09JVuI8EAqEu8XRI.nP7046b3C92nwSINtFzGL6abntP5ro2"
     }
   ],
   "notes": [],

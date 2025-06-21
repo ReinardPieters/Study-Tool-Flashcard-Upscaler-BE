@@ -1,4 +1,6 @@
 using StudyToolFlashcardUpscaler.Models.Dtos;
+using System.Runtime.InteropServices.Marshalling;
+using BCrypt.Net;
 
 namespace StudyToolFlashcardUpscaler.Api.Services
 {
@@ -17,7 +19,7 @@ namespace StudyToolFlashcardUpscaler.Api.Services
         {
             return _database.GetUsers();
         }
-
+       
         public UserDto CreateUser(UserDto newUser)
         {
             if (newUser == null)
@@ -30,11 +32,20 @@ namespace StudyToolFlashcardUpscaler.Api.Services
 
             var highestId = _database.Data.users.Max(x => x.Id);
                 newUser.Id = highestId + 1;
-
+            newUser.password = BCrypt.Net.BCrypt.HashPassword(newUser.password);
             _database.Data.users!.Add(newUser);
             _database.SaveData();
 
             return newUser;
+        }
+        public UserDto AuthenticateUser(string username, string password)
+        {
+            var allUsersResults = GetAllUsers();// or _users, whichever is consistent
+            var user = allUsersResults.FirstOrDefault(u => u.username == username);
+            if (user == null)
+                return null;
+            bool isPasswordValid= BCrypt.Net.BCrypt.Verify(password, user.password);
+            return isPasswordValid ? user : null;
         }
     }
 }
